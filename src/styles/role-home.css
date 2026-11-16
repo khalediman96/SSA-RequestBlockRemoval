@@ -1,0 +1,75 @@
+.role-home {
+  min-height: 100vh;
+  background: var(--color-bg, #f7f4f0);
+}
+
+.role-home__hero {
+  padding-block: 2.5rem 1rem;
+}
+
+.role-home__title {
+  margin: 0 0 0.5rem;
+  font-size: 34px;
+  line-height: 42px;
+  font-weight: 600;
+  color: var(--color-earth);
+}
+
+.role-home__intro {
+  margin: 0 0 2rem;
+  max-width: 40rem;
+  color: var(--color-muted);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.role-home__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  padding-bottom: 3rem;
+}
+
+.role-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--panel);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.role-card h2 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--color-earth);
+}
+
+.role-card__user {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.role-card__desc {
+  margin: 0;
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--color-slate);
+}
+
+.role-switch {
+  font-size: 13px;
+  margin-inline-start: auto;
+}
+
+.role-switch a {
+  color: var(--color-primary);
+}
+
+.app-hub__top-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

@@ -1,0 +1,10 @@
+@import "../ssa-skill/styles/ssa-tokens.css";
+@import "../ssa-skill/styles/ssa-shell.css";
+@import "../ssa-skill/styles/ssa-components.css";
+@import "../ssa-skill/styles/app-hub.css";
+@import "./styles/prototype.css";
+@import "./styles/role-home.css";
+@import "./styles/figma-applications-hub.css";
+@import "./styles/figma-application-details.css";
+@import "./styles/figma-submit-sidesheet.css";
+@import "./styles/portal-footer.css";

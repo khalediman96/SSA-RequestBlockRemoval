@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="102.27" height="29.28" viewBox="0 0 102.27 29.28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="shirt">
+<path id="Vector" d="M51.26 0H51.13C25.64 0.03 0 7.5 0 25.28V29.28H1.5H3H99.27H100.77H102.27V25.28C102.26 8.52 76.86 0 51.26 0Z" fill="url(#paint0_linear_0_1776)"/>
+<path id="Vector_2" d="M65.7992 0.779999V7.9C65.7992 13.37 60.1892 17.81 53.2592 17.81H50.7492C43.8192 17.81 38.1992 13.37 38.1992 7.89V0.739998C42.7192 0.239998 47.3692 0.01 51.9992 0H52.1392C56.7292 0 61.3392 0.259999 65.7992 0.779999Z" fill="#B9BBBD"/>
+<path id="Vector_3" d="M54.3193 15.5H49.7793V28H54.3193V15.5Z" fill="#B9BBBD"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_1776" x1="51.135" y1="29.0082" x2="51.135" y2="0.996775" gradientUnits="userSpaceOnUse">
+<stop offset="0.00051609" stop-color="#E3E3E3"/>
+<stop offset="1" stop-color="#C9C9C9"/>
+</linearGradient>
+</defs>
+</svg>

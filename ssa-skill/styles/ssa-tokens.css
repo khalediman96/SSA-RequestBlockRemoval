@@ -1,0 +1,110 @@
+/* ADSSA design tokens — shared SSA prototype shell */
+:root {
+  --background: #fcfcfc;
+  --foreground: #1f1b16;
+  --panel: #ffffff;
+  --sidebar: #faf7f2;
+  --z-side-sheet: 1300;
+
+  --color-primary: #bf8521;
+  --color-primary-dark: #442b00;
+  --color-primary-light: #eee7dd;
+  --color-row-bg: #f8f3ed;
+  --color-row-selected: #fffaf4;
+  --color-earth: #442b00;
+  --color-surface: #faf7f2;
+  --color-muted: #635d57;
+  --color-slate: #514b45;
+  --color-success: #1d6b36;
+  --color-danger: #a1242f;
+  --color-warning: #ffc107;
+  --color-white: #ffffff;
+  --color-border: #e3dbd3;
+  --color-segment-active: #bf8521;
+  --color-segment-idle-text: #bf8521;
+  --color-filter-field: #eee5d9;
+
+  --color-tag-pending-bg: #f8d9dc;
+  --color-tag-pending-text: #a1242f;
+  --color-tag-verified-bg: #b3e8ba;
+  --color-tag-verified-text: #0b6d29;
+  --color-tag-cancelled-bg: #ded9d2;
+  --color-tag-cancelled-text: #514b45;
+  --color-tag-coordinator-bg: #ececec;
+  --color-tag-coordinator-text: #514b45;
+  --color-tag-on-agenda-bg: #f3e8fd;
+  --color-tag-on-agenda-text: #6a1b9a;
+  --color-tag-returned-bg: #e8f0fe;
+  --color-tag-returned-text: #1967d2;
+  --color-tag-awaiting-applicant-bg: #fff0e0;
+  --color-tag-awaiting-applicant-text: #c45c0a;
+  --color-stage-pill-bg: #ececec;
+  --color-stage-pill-text: #495057;
+
+  --color-banner-info-bg: #eef4fb;
+  --color-banner-info-text: #1a4d7a;
+  --color-banner-info-border: #c5d9ed;
+  --color-banner-warning-bg: #fde8e8;
+  --color-banner-warning-text: #842029;
+  --color-banner-success-bg: #e8f5eb;
+  --color-banner-success-text: #1e5631;
+  --color-bulk-disabled-bg: #e2dbd3;
+  --color-bulk-disabled-text: #b6a99b;
+
+  --font-noto-sans: "Noto Sans", system-ui, sans-serif;
+  --font-noto-kufi: "Noto Kufi Arabic", "Noto Sans", sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  --dashboard-header-main-gap: 1.5rem;
+  --color-bg: #f7f4f0;
+}
+
+html,
+html[dir="ltr"],
+html[lang="en"],
+html[data-locale="en"] {
+  --font-ui: var(--font-noto-sans), var(--font-noto-kufi), sans-serif;
+  --font-arabic: var(--font-noto-kufi);
+}
+
+html[dir="rtl"],
+html[lang="ar"],
+html[data-locale="ar"] {
+  --font-ui: var(--font-noto-kufi), var(--font-noto-sans), sans-serif;
+  --font-arabic: var(--font-noto-kufi);
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-ui);
+  font-size: 14px;
+}
+
+.text-left {
+  text-align: start;
+}
+
+.text-right {
+  text-align: end;
+}
+
+.font-page-title {
+  font-family: var(--font-ui);
+}
+
+.bg-filter-field {
+  background-color: var(--color-filter-field);
+}
+
+.bg-row-card {
+  background-color: var(--color-row-bg);
+}

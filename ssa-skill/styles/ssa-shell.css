@@ -1,0 +1,232 @@
+/* Dashboard layout shell */
+.dashboard-shell {
+  width: 100%;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 768px) {
+  .dashboard-shell {
+    padding-inline: 6.95%;
+  }
+}
+
+.dashboard-inner {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1240px;
+}
+
+.coordinator-committee-nav {
+  width: 100%;
+  background: #2a1c0e;
+}
+
+.coordinator-committee-nav__inner {
+  padding-block: 0;
+}
+
+.coordinator-committee-nav__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0;
+}
+
+.coordinator-committee-nav__tab {
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+  cursor: pointer;
+  padding: 0 18px;
+  min-height: 2.75rem;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.88);
+  background: transparent;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.coordinator-committee-nav__tab:hover:not(.coordinator-committee-nav__tab--active) {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.coordinator-committee-nav__tab--active {
+  color: #1f1b16;
+  font-weight: 600;
+  background: #f3ebe0;
+}
+
+.header-portal-nav-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  background: var(--panel);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.header-portal-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.5rem;
+}
+
+.header-portal-nav__link,
+.header-portal-nav__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 0;
+  padding: 0;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-primary);
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.header-portal-nav__link:hover,
+.header-portal-nav__trigger:hover {
+  opacity: 0.82;
+}
+
+.header-portal-nav__link--active {
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 0.35rem;
+}
+
+.page-inner {
+  padding-top: var(--dashboard-header-main-gap);
+  margin-inline: auto;
+  max-width: 1240px;
+  width: 100%;
+  padding: 1.5rem 1rem 3rem;
+}
+
+@media (min-width: 768px) {
+  .page-inner {
+    padding-inline: 6.95%;
+  }
+}
+
+.side-sheet-overlay {
+  z-index: var(--z-side-sheet);
+}
+
+.top-nav,
+.coordinator-committee-nav {
+  width: 100%;
+  background: #2a1c0e;
+}
+
+.top-nav__inner,
+.coordinator-committee-nav__inner {
+  padding-block: 0;
+}
+
+.top-nav__inner,
+.top-nav__inner--compact,
+.coordinator-committee-nav__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0;
+}
+
+.nav-tab,
+.coordinator-committee-nav__tab {
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+  cursor: pointer;
+  padding: 0 18px;
+  min-height: 2.75rem;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.88);
+  background: transparent;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav-tab:hover:not(.nav-tab--active):not(.coordinator-committee-nav__tab--active),
+.coordinator-committee-nav__tab:hover:not(.coordinator-committee-nav__tab--active) {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-tab--active,
+.coordinator-committee-nav__tab--active {
+  color: #1f1b16;
+  font-weight: 600;
+  background: #f3ebe0;
+}
+
+.dashboard-shell .top-nav__inner,
+.dashboard-shell .top-nav__inner--compact {
+  max-width: 1240px;
+  margin-inline: auto;
+  width: 100%;
+  padding-inline: 0;
+}
+
+.portal-nav,
+.header-portal-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.5rem;
+}
+
+.portal-nav a,
+.portal-nav__item,
+.header-portal-nav__link {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.portal-nav__item--active,
+.header-portal-nav__link--active {
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 0.35rem;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-shell > main {
+  flex: 1 0 auto;
+}
+
+.app-shell > .portal-footer {
+  flex-shrink: 0;
+  margin-top: auto;
+}

@@ -1,0 +1,938 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "IBM Plex Sans:Medium";
+  src: url("https://static.figma.com/font/IBMPlexSans_wdth_wght__1") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "IBM Plex Sans:SemiBold";
+  src: url("https://static.figma.com/font/IBMPlexSans_wdth_wght__1") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Inter:Bold";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Inter:Regular";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter:Semi Bold";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Noto Kufi Arabic:Bold";
+  src: url("/fonts/Noto_Kufi_Arabic-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Noto Kufi Arabic:SemiBold";
+  src: url("/fonts/Noto_Kufi_Arabic-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Noto Sans:Bold";
+  src: url("/fonts/Noto_Sans-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Noto Sans:Condensed Bold";
+  src: url("https://static.figma.com/font/NotoSans-VF_3") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Noto Sans:Italic";
+  src: url("https://static.figma.com/font/NotoSans-Italic-VF_2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Noto Sans:Medium";
+  src: url("/fonts/Noto_Sans-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Noto Sans:Regular";
+  src: url("https://static.figma.com/font/NotoSans-VF_3") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Noto Sans:SemiBold";
+  src: url("/fonts/Noto_Sans-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Roboto:Regular";
+  src: url("https://static.figma.com/font/Roboto_wdth_wght__3") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+  color: #1f1b16;
+  background: #fcfcfc;
+  font-family: "Noto Sans:Medium", "Noto Sans", sans-serif;
+  font-synthesis: none;
+}
+
+@layer base {
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+    background: #fcfcfc;
+  }
+  button {
+    cursor: pointer;
+  }
+}
+
+.app {
+  --background: #fcfcfc;
+  --surface: #fff;
+  --soft: #faf5f0;
+  --ink: #1f1b16;
+  --heading: #442b00;
+  --line: #e6d6bf;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--ink);
+  transition:
+    color 0.2s,
+    background 0.2s;
+}
+
+.app.dark {
+  --background: #1f1a15;
+  --surface: #2a241e;
+  --soft: #332b24;
+  --ink: #f8f0e7;
+  --heading: #f3dfbd;
+  --line: #5d4f3f;
+}
+
+.shell {
+  width: min(1200px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.portal-strip {
+  height: 40px;
+  overflow-x: auto;
+  background: #2b2218;
+}
+
+.portal-items {
+  display: flex;
+  height: 40px;
+  width: max-content;
+  min-width: min(1200px, calc(100% - 48px));
+}
+
+.portal-items button {
+  padding: 0 12px;
+  color: #fcfcfc;
+  font-family: "Noto Sans:SemiBold";
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.portal-items button.active {
+  color: #2b2218;
+  background: #faf5f0;
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 96px;
+}
+
+.brand-logo {
+  width: 72px;
+  height: 72px;
+}
+
+.profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.profile > img:first-child {
+  width: 40px;
+  height: 40px;
+}
+
+.chevron {
+  width: 13px;
+  height: 8px;
+}
+
+.main-nav {
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: stretch;
+  height: 56px;
+}
+
+.nav-inner > button,
+.nav-menu > button {
+  display: flex;
+  height: 56px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  color: #6f5b40;
+  font-family: "Noto Sans:SemiBold";
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.nav-menu {
+  position: relative;
+}
+
+.nav-menu.selected {
+  border-bottom: 2px solid #bf8521;
+}
+
+.nav-menu img {
+  width: 12px;
+}
+
+.dropdown {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 6px);
+  left: 8px;
+  min-width: 190px;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 12px 30px #2b22181f;
+  color: var(--ink);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.profile-menu {
+  top: 65px;
+  left: auto;
+  right: 0;
+}
+
+.page-heading {
+  padding-top: 14px;
+}
+
+.breadcrumbs {
+  display: flex;
+  height: 36px;
+  align-items: center;
+  gap: 14px;
+  color: #bf8521;
+  font-family: "Noto Sans:SemiBold";
+  font-size: 13px;
+}
+
+.breadcrumbs img {
+  flex: 0 0 auto;
+}
+
+.breadcrumbs .crumb-arrow {
+  width: 14px;
+  height: 14px;
+}
+
+.breadcrumbs .crumb-wide-arrow {
+  width: 30px;
+  height: 24px;
+}
+
+.breadcrumbs .separator,
+.breadcrumbs .muted {
+  color: #bfa889;
+}
+
+.title-row {
+  display: flex;
+  min-height: 56px;
+  align-items: center;
+  gap: 16px;
+}
+
+.back {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+}
+
+.back img {
+  width: 24px;
+  height: 24px;
+}
+
+.title-row h1 {
+  flex: 1;
+  color: var(--heading);
+  font-family: "Noto Sans:SemiBold";
+  font-size: 32px;
+  line-height: 44.8px;
+}
+
+.content-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 12px 0 32px;
+}
+
+.approval-banner {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 32px;
+  border-radius: 16px;
+  background: #e9fcd7;
+  color: #49580e;
+  font-family: "Noto Kufi Arabic:SemiBold", "Noto Sans:SemiBold";
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.approval-banner img {
+  width: 24px;
+  height: 24px;
+}
+
+.workflow {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.progress-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 25px 37px;
+  background: var(--surface);
+}
+
+.progress-fragment {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+}
+
+.step {
+  display: flex;
+  width: 180px;
+  flex: 0 0 180px;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  text-align: center;
+}
+
+.step-check {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 9px;
+  place-items: center;
+  border: 2px solid #15803d;
+  border-radius: 999px;
+  background: #15803d;
+}
+
+.step-check img {
+  width: 18px;
+  height: 18px;
+}
+
+.step strong {
+  font-family: "Noto Sans:Bold";
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.step > span:not(.status-chip) {
+  color: #7a7468;
+  font-family: "Noto Sans:Regular";
+  font-size: 12px;
+  line-height: 16.5px;
+}
+
+.connector {
+  height: 2px;
+  flex: 1;
+  margin-top: 22px;
+  background: #15803d;
+}
+
+.status-chip {
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #b3e8ba;
+  color: #0b6d29;
+  font-family: "Noto Sans:SemiBold";
+  font-size: 13px;
+  line-height: 18.2px;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.status-chip.blue {
+  background: #c7e5ea;
+  color: #0b6c7b;
+}
+
+.status-chip.purple {
+  padding: 8px 16px;
+  background: #f1edfd;
+  color: #5439a7;
+}
+
+.status-chip.struck {
+  text-decoration: line-through;
+}
+
+.history {
+  padding: 28px 40px;
+  border-top: 1px solid var(--line);
+  background: var(--soft);
+}
+
+.history-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.history h2 {
+  color: #332206;
+  font-family: "Noto Sans:Bold";
+  font-size: 17px;
+  line-height: 25.5px;
+}
+
+.dark .history h2 {
+  color: var(--heading);
+}
+
+.history-head button {
+  color: #bf8521;
+  font-family: "Noto Sans:Bold";
+  font-size: 12px;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.history-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-left: 6px;
+  padding-left: 28px;
+  border-left: 2px solid #e2dbd0;
+}
+
+.history-item::before {
+  position: absolute;
+  top: 6px;
+  left: -8px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--soft);
+  border-radius: 50%;
+  content: "";
+}
+
+.history-item.green-dot::before {
+  background: #15803d;
+}
+.history-item.gold-dot::before {
+  background: #bf8521;
+}
+
+.history-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.history-copy strong {
+  font-family: "Noto Sans:Bold";
+  font-size: 15px;
+  line-height: 20.63px;
+}
+
+.history-copy span,
+.history-item time {
+  color: #7a7468;
+  font-family: "Noto Sans:Regular";
+  font-size: 12px;
+  line-height: 19.5px;
+}
+
+.history-copy p,
+.history-copy em {
+  margin-top: 5px;
+  font-family: "Noto Sans:Regular";
+  font-size: 14px;
+  font-style: normal;
+  line-height: 21px;
+}
+
+.history-copy em {
+  margin-top: 1px;
+  font-family: "Noto Sans:Italic";
+  font-style: italic;
+}
+
+.history-copy em b {
+  font-family: "Noto Sans:Condensed Bold";
+  font-weight: 700;
+  font-variation-settings:
+    "CTGR" 0,
+    "wdth" 75;
+}
+
+.history-item time {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 30px 24px;
+  border: 1px solid #e3dbd3;
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.summary-card h2 {
+  color: var(--heading);
+  font-family: "Noto Kufi Arabic:SemiBold", "Noto Sans:SemiBold";
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.summary-panel {
+  padding: 24px;
+  border-radius: 8px;
+  background: var(--soft);
+}
+
+.applicant-grid,
+.removal-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.field {
+  min-width: 0;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #675d50;
+  font-family: "Noto Sans:Medium";
+  font-size: 13px;
+  line-height: 18.2px;
+}
+
+.dark .field-label {
+  color: #cbbdac;
+}
+
+.field-value {
+  font-family: "Noto Kufi Arabic:SemiBold", "Noto Sans:SemiBold";
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.applicant-grid .field-value {
+  font-size: 18px;
+}
+
+.applicant-grid .wide {
+  grid-column: span 3;
+}
+
+.removal-grid .wide {
+  grid-column: span 3;
+}
+
+.summary-divider {
+  display: block;
+  max-width: 100%;
+  height: 48px;
+  margin: 24px 8px;
+}
+
+.comment {
+  padding: 24px;
+  border-radius: 8px;
+  background: #fdfdfd;
+}
+
+.dark .comment {
+  background: #27221d;
+}
+
+.documents {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.documents-label {
+  color: #6f5b40;
+  font-size: 14px;
+  line-height: 19.6px;
+}
+
+.document-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.document-card {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+  background: var(--soft);
+}
+
+.pdf-icon {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  mask: url("/assets/a4826.svg") center / 36px 36px no-repeat;
+}
+
+.pdf-icon img {
+  display: block;
+  margin-left: 4.5px;
+}
+
+.document-name {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+.document-name strong {
+  overflow: hidden;
+  font-family: "Inter:Semi Bold";
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.document-name span {
+  color: #6d6d6d;
+  font-family: "Inter:Regular";
+  line-height: 16px;
+}
+
+.document-card button {
+  color: #bf8521;
+  font-family: "Noto Sans:Bold";
+  font-size: 12px;
+}
+
+.action-footer {
+  background: #ebe2d5;
+}
+
+.action-inner {
+  display: flex;
+  min-height: 106px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 11px;
+}
+
+.action-inner .secondary,
+.action-inner .primary {
+  height: 48px;
+  padding: 0 24px;
+  border: 1px solid #bf8521;
+  border-radius: 30px;
+  font-family: "Noto Sans:SemiBold";
+  font-size: 18px;
+}
+
+.action-inner .secondary {
+  color: #bf8521;
+}
+
+.action-inner .primary {
+  background: #bf8521;
+  color: white;
+}
+
+.fab {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  margin-left: 39px;
+  place-items: center;
+  border-radius: 50%;
+  background: #bf8521;
+  color: white;
+  font-family: "IBM Plex Sans:SemiBold";
+  font-size: 20px;
+}
+
+.site-footer {
+  display: flex;
+  min-height: 120px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  color: #6f5b40;
+  font-size: 13px;
+}
+
+.copyright img {
+  width: 32px;
+  height: 32px;
+}
+
+.preferences {
+  display: flex;
+  gap: 24px;
+}
+
+.segmented {
+  display: flex;
+  padding: 4px;
+  border-radius: 8px;
+  background: #ebe2d5;
+}
+
+.segmented button {
+  width: 100px;
+  height: 32px;
+  border-radius: 8px;
+  color: #6f5b40;
+  font-family: "Noto Sans:SemiBold";
+  font-size: 13px;
+}
+
+.segmented button.active {
+  background: white;
+}
+
+.toast {
+  position: fixed;
+  z-index: 50;
+  right: 24px;
+  bottom: 24px;
+  padding: 13px 18px;
+  border-radius: 8px;
+  background: #2b2218;
+  color: white;
+  box-shadow: 0 10px 30px #0003;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .shell {
+    width: min(100% - 32px, 1200px);
+  }
+  .portal-items {
+    min-width: calc(100% - 32px);
+  }
+  .applicant-grid,
+  .removal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .applicant-grid .wide,
+  .removal-grid .wide {
+    grid-column: span 1;
+  }
+  .progress-card {
+    padding-inline: 16px;
+  }
+  .step {
+    width: 145px;
+    flex-basis: 145px;
+  }
+  .site-footer {
+    flex-direction: column;
+    gap: 20px;
+    padding: 28px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-row {
+    height: 76px;
+  }
+  .brand-logo {
+    width: 56px;
+    height: 56px;
+  }
+  .main-nav {
+    overflow-x: auto;
+  }
+  .nav-inner {
+    width: max-content;
+    min-width: calc(100% - 32px);
+  }
+  .breadcrumbs {
+    overflow: hidden;
+  }
+  .title-row {
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+  }
+  .title-row h1 {
+    font-size: 25px;
+    line-height: 35px;
+  }
+  .title-row .status-chip {
+    margin-left: 40px;
+  }
+  .approval-banner {
+    align-items: flex-start;
+    padding: 18px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .progress-card {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+  }
+  .progress-fragment {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 4px;
+  }
+  .step {
+    width: auto;
+    flex-basis: auto;
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    grid-template-rows: repeat(3, auto);
+    column-gap: 14px;
+    text-align: left;
+  }
+  .step-check {
+    grid-row: 1 / 4;
+    margin: 0;
+  }
+  .step > *:not(.step-check) {
+    justify-self: start;
+  }
+  .connector {
+    width: 2px;
+    height: 26px;
+    flex: none;
+    margin: 0 0 0 21px;
+  }
+  .history {
+    padding: 22px 20px;
+  }
+  .history-item {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .history-item time {
+    order: -1;
+  }
+  .summary-card {
+    padding: 22px 16px;
+  }
+  .summary-panel {
+    padding: 18px;
+  }
+  .applicant-grid,
+  .removal-grid,
+  .document-grid {
+    grid-template-columns: 1fr;
+  }
+  .comment {
+    padding: 16px;
+  }
+  .action-inner {
+    flex-wrap: wrap;
+    padding: 18px 0;
+  }
+  .fab {
+    margin-left: 4px;
+  }
+  .copyright {
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 11px;
+  }
+  .preferences {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .segmented {
+    width: 100%;
+  }
+  .segmented button {
+    flex: 1;
+  }
+}
